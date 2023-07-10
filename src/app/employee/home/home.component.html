@@ -1,0 +1,93 @@
+<!-- style -->
+<style>
+  .bg-color{
+    background-color: #f3f3f3;
+  }
+  .th-text{
+    font-family: Ubuntu Condensed;
+    font-size: 20px;
+  }
+  .td-text{
+    font-family: ubuntu mono;
+    font-size: 18px;
+  }
+  .t-title{
+    text-align: center;
+    font-family: ubuntu;
+    font-size: x-large;
+  }
+  .button-text{
+    font-family: ubuntu mono;
+  }
+</style>
+
+
+<div class="container">
+  <div class="container">
+    <div class="row mt-2">
+      <div>
+        <a class="btn btn-outline-info button-text" routerLink="/employee/create" >Create</a>
+      </div><br>
+    </div><br>
+    <table class="table mx-auto p-2 table th-text table-striped table-dark" style="font-size: x-large;">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Position</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="td-text">
+        <tr *ngFor="let item of allEmployee">
+          <th scope="row">{{ item.id }}</th>
+          <td>{{ item.name }}</td>
+          <td>{{ item.position }}</td>
+          <td>
+            <a class="btn btn-outline-info button-text" [routerLink]="['/employee/edit', item.id] ">Edit</a>
+            <button type="button" (click)="openDeleteModal(item.id)" class="btn btn-outline-danger button-text">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+  <!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Warning!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure to delete the record?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" (click)="delete()">Confirm Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 
+  (Line: 2-22) For CSS Style
+
+  (Line: 29) 'routerLink="/employee/create"''
+  Angular for databinding bind the we use '{{}}'(string interpolation) 
+
+  (Line: 42) The 'allEmployee' is array, to loop it over the HTML content we have to use '*ngFor'. In *ngFor we will use array of object like 'allEmployee', 
+  the 'of' keyword to popsout each item from  the array and assign to the variable 'item'
+
+  (Line: 43-45) Rendering the data to the bootstrap table. 
+
+  (Line 47) Here we use 'routerLink' inside of  '[]' if the URL has a dynamic parameter. On render URL generated as eg:- 'employee/edits/1'
+
+  (Line: 48) Edit button registered with 'openDeleteModal()' for click event.
+  (Line: 58-74) Delete confirmation bootstrap modal, here we have to give 'id' attribute, based on that 'id' attribute we create the bootstrap instance in 'home.component.ts' file.
+  (Line: 70) Here 'Confirm Delete' button registered with 'delete()' method for click event.
+-->

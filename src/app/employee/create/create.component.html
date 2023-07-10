@@ -1,0 +1,23 @@
+<div class="container">
+    <legend>Create new record</legend>
+    <form>
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Name</label>
+        <input type="text" name="name" [(ngModel)] = "employeeForm.name" class="form-control" id="txtName" />
+      </div>
+      <div class="mb-3">
+        <label for="txtName" class="form-label">Position</label>
+        <input type="text" name="position" [(ngModel)] = "employeeForm.position" class="form-control" id="txtName" />
+      </div>
+      <button type="button" (click)="create()" class="btn btn-outline-info button-text">Create</button>
+    </form><br>
+  </div>
+
+
+  <!-- 
+   - Here enable 2-way model binding using '[(ngModel)]'. 
+    One more important thing here is that the input element must contain the 'name' attribute for 2-way model binding.
+
+    - Click event can be a register like '(name_of_event)' 
+    and the event must register with the method so that on raise of event logic inside of the method gets executed.
+   -->

@@ -1,0 +1,14 @@
+<div class="container">
+    <legend>Edit Record</legend>
+    <form>
+        <div class="mb-3">
+            <label for="txtName" class="form-label">Name</label>
+            <input type="text" name="name" [(ngModel)] = "employeeForm.name" class="form-control" id="txtName" />
+          </div>
+          <div class="mb-3">
+            <label for="txtName" class="form-label">Position</label>
+            <input type="text" name="position" [(ngModel)] = "employeeForm.position" class="form-control" id="txtName" />
+          </div>
+      <button type="button" (click)="update()" class="btn btn-outline-success">Update</button>
+    </form><br>
+</div>

@@ -1,27 +1,37 @@
-# Employee
+# Employee Management System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.2.
+The Employee Management System is a web application built with Angular and Bootstrap that allows you to manage employee data and perform CRUD operations (Create, Read, Update, Delete). It provides a user-friendly interface for managing employee information efficiently.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Display a list of employees in a table format.
+- Add new employees to the system.
+- Update employee information.
+- Delete employees from the system.
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Node Js installed on my machine
+- Angular CLI: 'npm install -g @angular/cli'
+- JSON server: 'npm install -g json-server'
+
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Create Project directory: Run "ng new employee-management"
+- Navigate to the project directory: Run "cd employee-management"
+- Install Bootstrap CSS Framework:  'npm install bootstrap'
 
-## Running unit tests
+## Usage
+Run ' ng generate component component-name ' to generate my components
+Run ' ng serve ' to start the development server (Open my browser and visit http://localhost:4200 to access the application)
+Run ' ng generate service service-name ' to generate my service
+Run ' npm run json-run ' to start the development API (Open my browser and visit http://localhost:3000 to access the application)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+##Technologies Used
+- Angular: A popular JavaScript framework for building web applications.
+- Bootstrap: A CSS framework for creating responsive and visually appealing user interfaces.
+- HTML: Markup language for creating web pages.
+- CSS: Style sheet language for styling web pages.
+- JSON API
